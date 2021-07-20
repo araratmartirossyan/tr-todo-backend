@@ -18,4 +18,6 @@ const config = {
   }
 }
 
+console.log(config, 'CONFIG')
+
 export default config

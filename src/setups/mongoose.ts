@@ -1,9 +1,13 @@
 import mongoose from 'mongoose'
-import { currentConfig } from "./../../config"
+import { currentConfig } from './../../config'
 import { prettyLog } from './../utils/prettyLog.util'
 
 const connectMongo = async () => {
-  const { database: { mongo: { username = null, password = null, uri, database } } } = currentConfig
+  const {
+    database: {
+      mongo: { username = null, password = null, uri, database }
+    }
+  } = currentConfig
   const defaultConfig = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -13,15 +17,19 @@ const connectMongo = async () => {
 
   const protectedConfig = {
     ...defaultConfig,
-    username, password,
+    username,
+    password
   }
 
   const config = !username || !password ? defaultConfig : protectedConfig
+
+  console.log(config, 'cofing')
 
   try {
     await mongoose.connect(`mongodb://${uri}/${database}`, config)
     prettyLog({ message: 'Mongoose Connected', options: { borderColor: 'cyan', padding: 1 } })
   } catch (err) {
+    console.log(err)
     throw new Error(err)
   }
 }

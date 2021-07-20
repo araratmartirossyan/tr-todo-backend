@@ -1,0 +1,13 @@
+version: '3.4'
+services:
+  mongodb:
+    image: mongo
+    environment:
+      # provide your credentials here
+      - MONGO_INITDB_ROOT_USERNAME=local
+      - MONGO_INITDB_ROOT_PASSWORD=123456
+    volumes:
+      - ./_databases/mongodb/mongo-data:/data/db
+    ports:
+      - 27017:27017
+    command: mongod

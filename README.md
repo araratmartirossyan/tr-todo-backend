@@ -12,3 +12,10 @@ or
 `yarn start`
 or 
 `npm run start`
+
+### Run with docker 
+
+This command will create for you docker container with mongodb. For this you need docker up and running on your machine.
+`yarn docker-start`
+or
+`npm run docker-start`

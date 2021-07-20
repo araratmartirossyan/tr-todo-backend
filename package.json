@@ -35,7 +35,8 @@
     "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
     "build": "tsc",
     "prestart": "npm run build",
-    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node --files index.ts' index.ts"
+    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node --files index.ts' index.ts",
+    "docker-start": "docker-compose up & npm run start"
   },
   "keywords": [
     "api",

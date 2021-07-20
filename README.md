@@ -1,5 +1,5 @@
 ## For test run you need local mongodb instance via Docker or manual 
-You need to create .env file, example you can fin in .env.example
+You need to create .env file, example you can fin in .env.example. It's already contains default Mongo credentials for Docker.
 
 ## Dev mode
 
@@ -19,3 +19,4 @@ This command will create for you docker container with mongodb. For this you nee
 `yarn docker-start`
 or
 `npm run docker-start`
+
